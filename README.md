@@ -10,3 +10,7 @@ Vim plugin that provides a simple UI for asynchronous content search.
     - `<c-d>` Switch to the mode for entering the directory.
     - `<c-a>` Switch to the mode for entering arguments.
     - `<c-l>` Choose whether to overwrite (!) the target list with the search results or append (+) the search results to the existing target list.
+
+## Screenshots
+
+![leaderg.png](images/leaderg.png)
