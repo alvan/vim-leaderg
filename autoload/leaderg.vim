@@ -222,6 +222,12 @@ func! s:prompt(state) abort
     execute 'cnoremap <silent>' g:leaderg_mapping_file "\<c-\>e\<sid>switch('file')<cr><cr>"
     execute 'cnoremap <silent>' g:leaderg_mapping_args "\<c-\>e\<sid>switch('args')<cr><cr>"
 
+    " Set low timeout for key codes, so <esc> would cancel prompt faster
+    let ttimeoutsave = &ttimeout
+    let ttimeoutlensave = &ttimeoutlen
+    let &ttimeout = 1
+    let &ttimeoutlen = 100
+
     echohl LeadergPrompt
     call inputsave()
 
@@ -267,6 +273,10 @@ func! s:prompt(state) abort
         call s:reset_map(l:maparg_dirs)
         call s:reset_map(l:maparg_file)
         call s:reset_map(l:maparg_args)
+
+        " Restore original timeout settings for key codes
+        let &ttimeout = ttimeoutsave
+        let &ttimeoutlen = ttimeoutlensave
 
         echohl NONE
         call inputrestore()
