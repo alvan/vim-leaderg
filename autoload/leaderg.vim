@@ -8,8 +8,7 @@ if !exists("g:leaderg_root_markers")
 endif
 
 if !exists("g:leaderg_default_dirs")
-    " cwd,dir,root,filecwd
-    let g:leaderg_default_dirs = ['cwd', 'dir', 'root', 'filecwd']
+    let g:leaderg_default_dirs = ['root', 'cwd', 'dir', 'filecwd']
 endif
 
 if !exists("g:leaderg_default_file")
